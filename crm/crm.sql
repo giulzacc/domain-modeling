@@ -5,6 +5,8 @@ DROP TABLE IF EXISTS contacts;
 DROP TABLE IF EXISTS activities;
 DROP TABLE IF EXISTS companies;
 DROP TABLE IF EXISTS salespersons;
+DROP TABLE IF EXISTS industries;
+DROP TABLE IF EXISTS company_industry_xrefs;
 
 CREATE TABLE contacts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,8 +29,19 @@ CREATE TABLE activities (
 CREATE TABLE companies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
-  description TEXT,
-  industry TEXT
+  description TEXT
+);
+
+CREATE TABLE industries (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  description TEXT
+);
+
+CREATE TABLE company_industry_xrefs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  company_id TEXT,
+  industry_id TEXT
 );
 
 CREATE TABLE salespersons (
