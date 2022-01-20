@@ -9,13 +9,9 @@ CREATE TABLE users (
 
 CREATE TABLE post (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    post TEXT
-) ;
-
-CREATE TABLE user_post_xref (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_ID INTEGER,
-    post_ID INTEGER
+    image_url TEXT,
+    posted_at SMALLDATETIME
 ) ;
 
 CREATE TABLE likes (
@@ -27,20 +23,18 @@ CREATE TABLE likes (
 
 CREATE TABLE comments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    comment TEXT
-) ;
-
-CREATE TABLE user_comment_xref (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_ID INTEGER,
-    comment_ID INTEGER
+    comment TEXT,
+    post_ID INTEGER,
+    posted_at SMALLDATETIME
 ) ;
 
-CREATE TABLE comment_post_xref (
+CREATE TABLE followers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    comment_ID INTEGER,
-    post_ID INTEGER
+    followed_user_ID INTEGER,
+    follower_user_ID INTEGER
 ) ;
+
 
 
 
